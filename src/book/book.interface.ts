@@ -1,4 +1,6 @@
 export interface Book {
-  name: string;
-  author: string;
+  bookName: string;
+  authorName: string;
+  publishedYear: number;
+  isAvailable: boolean;
 }
