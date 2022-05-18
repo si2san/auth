@@ -1,6 +1,7 @@
 import {
   Controller,
   Get,
+  Header,
   HttpCode,
   Param,
   Post,
@@ -55,5 +56,13 @@ export class ABCController {
   @HttpCode(204)
   postExampleWithStatusCode(): string {
     return 'This Code is coming from POST Method';
+  }
+
+  // Handling Http Headers
+  @Post('/post-exampleee')
+  @HttpCode(204)
+  @Header('Etag','asdf1234')
+  postExampleWithHttpHeaders():string{
+    return 'This code is coming from POST Method with Http Headers';
   }
 }
