@@ -1,0 +1,26 @@
+version: '2'
+
+services:
+  db:
+    image: mysql:5.6
+    ports:
+      - 3306:3306
+    volumes:
+      - $PWD/data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: auth
+      MYSQL_PASSWORD: auth
+      MYSQL_DATABASE: auth
+
+  nest:
+    image: node:16-alpine
+    working_dir: /app
+    restart: always
+    links:
+      - db:db
+    ports:
+      - "5000:5000"
+    volumes:
+      - $PWD:/app
+    command: 'npm run start:dev'

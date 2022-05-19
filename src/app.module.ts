@@ -9,10 +9,10 @@ import { BookModule } from './book/book.module';
   imports: [
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: 'localhost',
+      host: 'db',
       port: 3306,
-      username: 'root',
-      password: 'root',
+      username: 'auth',
+      password: 'auth',
       database: 'auth',
       entities: [Book],
       synchronize: true,
