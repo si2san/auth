@@ -8,7 +8,7 @@ import { Book as BookInterface } from './book.interface';
 
 @Injectable()
 export class BookService {
-
+  
   constructor(
     @InjectRepository(Book)
     private bookRepository: Repository<Book>,
